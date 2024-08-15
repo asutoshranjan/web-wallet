@@ -8,7 +8,7 @@ export default function RenderWallets({ keyPairs }: { keyPairs: KeyPair[] }) {
     return (
       <div>
         {keyPairs.map((keyPair, index) => (
-          <WalletCard keyPair={keyPair} index={index} />
+          <WalletCard key={index} keyPair={keyPair} index={index} />
         ))}
       </div>
     );
