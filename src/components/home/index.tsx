@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { IconCurrencySolana, IconCurrencyEthereum } from "@tabler/icons-react";
+import {
+  IconCurrencySolana,
+  IconCurrencyEthereum,
+  IconBrandGithub,
+} from "@tabler/icons-react";
 import EthImage from "../../../public/eth.png";
 import SolImage from "../../../public/sol.png";
 import {
@@ -16,6 +20,7 @@ import {
 import MnemonicGrid from "../mnemonic-grid";
 import RenderWallets from "../render-wallets";
 import Toast from "../toast";
+import Link from "next/link";
 
 interface Seed {
   mnemonic?: string;
@@ -150,7 +155,7 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center px-8 py-6 pb-14 bg-blue-3">
+    <main className="flex min-h-screen flex-col items-center px-8 py-6 pb-10 bg-blue-3">
       <div className="w-full mb-4">
         <div className="font-Inter text-blue-1 text-3xl font-medium md:px-16">
           Safe Wallet
@@ -198,6 +203,16 @@ export default function Home() {
               Add New Wallet
             </button>
           </div>
+        </div>
+      </div>
+      <div className="flex flex-row z-10 gap-x-3 mt-20 font-Inter font-medium">
+        <h2 className="text-gray-400 font-semibold">100xdevs</h2>
+        <h2 className="text-gray-700/70">•</h2>
+        <div className="flex flex-row gap-x-1">
+          <h2 className="text-black/75">@asutosh</h2>
+          <Link href={"https://github.com/asutoshranjan"}>
+            <IconBrandGithub size={22} />
+          </Link>
         </div>
       </div>
     </main>
