@@ -289,7 +289,7 @@ export default function Home() {
           Sepolia ETH to your generated wallets. Alternatively, use the mnemonic
           phrase provided below to generate four Solana wallets and four
           Ethereum wallets. Since the wallets are derived from the same seed and
-          path, they will already contain some Devnet tokens that I've
+          path, they will already contain some Devnet tokens that I have
           transferred for testing purposes.
         </p>
         <p className="font-mono bg-blue-100 border border-blue-300 text-blue-800 p-3 mt-4 rounded-md">
