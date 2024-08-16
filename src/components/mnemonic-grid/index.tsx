@@ -5,8 +5,10 @@ import Toast from "../toast";
 
 export default function MnemonicGrid({
   mnemonic,
+  btnfunc,
 }: {
   mnemonic: string | undefined;
+  btnfunc: () => void;
 }) {
   const [copy, setCopy] = useState(false);
   const [animationKey, setAnimationKey] = useState(0);
@@ -36,9 +38,14 @@ export default function MnemonicGrid({
 
   if (!mnemonic) {
     return (
-      <h2 className="text-gray-400/60 text-lg font-Inter font-medium tracking-wide animate-fadeIn">
-        First Generate Mnemonic
-      </h2>
+      <div className="text-gray-400/60 text-lg font-Inter font-medium tracking-wide animate-fadeIn">
+        <button
+          onClick={btnfunc}
+          className="bg-blue-1 py-2 px-4 text-light-white font-Inter font-medium rounded-md text-base md:text-lg"
+        >
+          Add New Mnemonic
+        </button>
+      </div>
     );
   } else {
     return (

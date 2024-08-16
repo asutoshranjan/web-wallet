@@ -32,6 +32,11 @@ export function generateKeypair(seed: Buffer) {
   return { secret, publicKey, encodedPrivateKey };
 }
 
+export function generateAndSyncSeed(mnemonic: string) {
+  const seed = mnemonicToSeedSync(mnemonic);
+  return { seed };
+}
+
 
 export function generateEthereumWallet(seed: Buffer, derivedPath: string) {
     const hdNode = HDNodeWallet.fromSeed(seed);

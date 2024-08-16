@@ -53,17 +53,17 @@ function WalletCard({ keyPair, index }: { keyPair: KeyPair; index: number }) {
   return (
     <div
       key={index}
-      className="border-2 flex flex-row border-blue-2 text-deep-black w-full font-Inter font-medium text-sm rounded-md py-3 px-4 mt-2 animate-fadeIn"
+      className="border-2 flex flex-row border-blue-2 text-deep-black w-full font-Inter items-center font-medium text-sm rounded-md py-3 px-4 mt-2 animate-fadeIn"
     >
-      <div className="text-lg font-medium mr-2 font-Inter text-gray-500/50">
+      <div className="text-lg md:text-xl font-medium mr-2 font-Inter text-gray-500/50">
         #{keyPair.id}
       </div>
 
       <div className="flex flex-col">
-        <div className="flex flex-row items-center gap-x-2 font-semibold">
-          <h2>Public Key: {formatPublicKey(keyPair.publicKey!, 9)}</h2>
+        <div className="flex flex-row text-lg items-center gap-x-2 font-semibold">
+          <h2>Public Key: {formatPublicKey(keyPair.publicKey!, 6)}</h2>
           {copy === keyPair.publicKey ? (
-            <h2 className="text-xs text-light-green font-Inter font-medium">
+            <h2 className="text-sm text-light-green font-Inter font-medium">
               Copied Key
             </h2>
           ) : (
@@ -77,7 +77,7 @@ function WalletCard({ keyPair, index }: { keyPair: KeyPair; index: number }) {
         </div>
 
         <div className="flex flex-col w-full gap-x-2 font-semibold">
-          <div className="flex flex-row">
+          <div className="flex flex-row text-base">
             <p className="text-gray-1 font-medium font-Inter">
               Private Key: &#160;
             </p>
@@ -90,7 +90,7 @@ function WalletCard({ keyPair, index }: { keyPair: KeyPair; index: number }) {
                   onClick={() => viewPrivateKey(keyPair.encodedPrivateKey!)}
                   className="flex flex-row justify-center items-center ml-2 text-gray-1"
                 >
-                  <IconEye size={16} />
+                  <IconEye size={18} />
                 </button>
               </div>
             ) : (
@@ -99,7 +99,7 @@ function WalletCard({ keyPair, index }: { keyPair: KeyPair; index: number }) {
           </div>
 
           {view === keyPair.encodedPrivateKey ? (
-            <p className="w-full break-all overflow-wrap break-word">
+            <p className="w-full break-all text-base overflow-wrap break-word">
               {keyPair.encodedPrivateKey}
             </p>
           ) : (
