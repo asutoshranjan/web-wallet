@@ -1,17 +1,17 @@
-import { toast } from "react-hot-toast";
+import { toast } from "sonner"
 
 export default function Toast({
   type,
   message,
+  check = false,
 }: {
   type: string;
   message: string;
+  check?: boolean;
 }) {
   toast.custom((t) => (
     <div
-      className={`${
-        t.visible ? "animate-enter" : "animate-leave"
-      } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+      className={`w-96 bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
     >
       <div className="flex-1 w-0 p-4">
         <div className="flex items-start">
@@ -21,7 +21,7 @@ export default function Toast({
               className={`text-lg font-medium font-Inter ${
                 type.toLowerCase() === "error"
                   ? "text-light-red"
-                  : "text-deep-black"
+                  : check? "text-light-green": "text-deep-black"
               }`}
             >
               {type}
@@ -32,7 +32,7 @@ export default function Toast({
       </div>
       <div className="flex border-l border-gray-200">
         <button
-          onClick={() => toast.dismiss(t.id)}
+          onClick={() => toast.dismiss(t)}
           className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-blue-1 hover:text-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
         >
           Close

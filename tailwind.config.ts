@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'scale(0.98)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.5s ease-in-out forwards',
+      },
       colors: {
         'blue-1': '#007CBF',
         'blue-2': "#CCE5F2",
@@ -31,4 +40,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

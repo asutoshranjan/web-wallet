@@ -65,9 +65,7 @@ export default function Home() {
       return;
     }
 
-    const coin_type =
-      coin === "Solana" ? 501 : coin === "Ethereum" ? 60 : undefined;
-    // const coin_type = 501
+    const coin_type = coin === "Solana" ? 501 : coin === "Ethereum" ? 60 : undefined;
     const i = count;
     const path = `m/44'/${coin_type}'/${i}'/0'`;
     const derivedSeed = getDerivedSeed({
@@ -198,7 +196,7 @@ export default function Home() {
               onClick={addNewWallet}
               className={`${
                 isWalletAddDisabled() ? "bg-gray-300" : "bg-blue-1"
-              } py-2 px-4 text-light-white font-Inter text-sm font-medium rounded-md md:text-sm lg:text-sm`}
+              } py-2 px-4 text-light-white font-Inter text-sm font-medium rounded-md md:text-sm lg:text-sm transition-colors duration-500 ease-in-out`}
             >
               Add New Wallet
             </button>
@@ -211,7 +209,7 @@ export default function Home() {
         <div className="flex flex-row gap-x-1">
           <h2 className="text-black/75">@asutosh</h2>
           <Link href={"https://github.com/asutoshranjan"}>
-            <IconBrandGithub size={22} />
+            <IconBrandGithub size={22} className="text-black/75" />
           </Link>
         </div>
       </div>

@@ -14,7 +14,7 @@ export default function RenderWallets({ keyPairs }: { keyPairs: KeyPair[] }) {
     );
   } else {
     return (
-      <div className="text-gray-400/60 text-lg items-center font-Inter font-medium tracking-wide flex-1 flex flex-col justify-center">
+      <div className="text-gray-400/60 text-lg items-center font-Inter font-medium tracking-wide flex-1 flex flex-col justify-center animate-fadeIn">
         <div> Add New Wallet</div>
       </div>
     );
@@ -53,7 +53,7 @@ function WalletCard({ keyPair, index }: { keyPair: KeyPair; index: number }) {
   return (
     <div
       key={index}
-      className="border-2 flex flex-row border-blue-2 text-deep-black w-full font-Inter font-medium text-sm rounded-md py-3 px-4 mt-2"
+      className="border-2 flex flex-row border-blue-2 text-deep-black w-full font-Inter font-medium text-sm rounded-md py-3 px-4 mt-2 animate-fadeIn"
     >
       <div className="text-lg font-medium mr-2 font-Inter text-gray-500/50">
         #{keyPair.id}
