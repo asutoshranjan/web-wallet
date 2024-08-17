@@ -17,7 +17,12 @@ export default function WalletPage() {
     setBalanceInfo(null);
 
     try {
-      const wallet = walletType === "solana" ? "sol" : walletType === "ethereum" ? "eth" : undefined;
+      const wallet =
+        walletType === "solana"
+          ? "sol"
+          : walletType === "ethereum"
+          ? "eth"
+          : undefined;
       const response = await fetch(`/api/${wallet}-balance`, {
         method: "POST",
         headers: {

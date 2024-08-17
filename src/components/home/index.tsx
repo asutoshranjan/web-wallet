@@ -85,7 +85,7 @@ export default function Home() {
       "seed",
       JSON.stringify({ mnemonic: inputMnemonic, seed })
     );
-    Toast({ message: "Mnemonic Added", type: "Success" });
+    Toast({ message: "Mnemonic Added", type: "Success", check: true });
     setIsModalOpen(false);
   };
 
@@ -247,12 +247,12 @@ export default function Home() {
             <RenderButtons />
           </div>
           <div className="flex-1 flex flex-row-reverse">
-            <button
+            { !isWalletAddDisabled() && <button
               onClick={deleteall}
               className={`py-2 px-4 font-Inter font-medium rounded-md text-lg  bg-light-red text-light-white`}
             >
               Delete All
-            </button>
+            </button>}
           </div>
         </div>
       </div>
