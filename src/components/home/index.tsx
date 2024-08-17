@@ -258,9 +258,9 @@ export default function Home() {
       </div>
 
       <div className="bg-light-white shadow-md w-full md:w-3/5 h-96 rounded-lg mb-4 mt-4 flex flex-col md:flex-row justify-center items-center">
-        <div className="w-full md:w-2/3 h-96 flex flex-col py-2 px-3 max-h-96 overflow-y-auto rounded-l-lg scroll-smooth [scrollbar-width:]">
-          <RenderWallets keyPairs={coin === "Solana" ? keyPair : ethWallet} />
-        </div>
+      <div className="w-full flex-1 md:w-2/3 h-96 py-2 px-3 max-h-96 overflow-y-auto rounded-l-lg scroll-smooth">
+  <RenderWallets keyPairs={coin === "Solana" ? keyPair : ethWallet} type={coin}  />
+</div>
         <div className="w-1/3 h-2/5 md:h-full flex flex-col justify-center items-center md:border-l-2">
           <div className="pt-4 flex flex-row gap-x-2">
             <RenderEthSol />
